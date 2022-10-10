@@ -3,4 +3,14 @@
     <h3>SuccessComponent</h3>
     <hr>
     <p>Success!</p>
+    <p> The username is <span>{{username}} </span></p>
+    <input type="text" class="form-control" (input)="UserEntry($event)">
+    <button 
+        class="btn btn-primary" 
+        [disabled]="disableButton" 
+        (click)="ResetUsername()">
+        Reset Username
+    </button>
+    
+
 </div>
