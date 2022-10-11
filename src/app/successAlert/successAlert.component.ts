@@ -37,11 +37,11 @@ export class SuccessAlertComponent{
         }
         else this.hidePassword = true;
         this.counter++;
-        this.myClick.push(Date.now)
+        this.myClick.push(Date.now());
     }
 
     //RegisterClicks(){
-       // this.myClick.push(Math.random)
-   // }
+        //return "test";
+    //}
 
 }
