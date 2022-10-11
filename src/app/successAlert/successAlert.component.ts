@@ -9,6 +9,9 @@ import { Component } from '@angular/core'
 export class SuccessAlertComponent{
     username: string ="";
     disableButton = true;
+    hidePassword = true;
+    myClick = [];
+    counter = 1;
 
     Constructor(){
 
@@ -20,11 +23,25 @@ export class SuccessAlertComponent{
         }
         else this.disableButton = false;
     }
+
     EnableButton(){
         return this.disableButton;
     }
     
-    ResetUsername(){
-        
+    ResetUsername(){     
     }
+
+    DisplayDetail(){
+        if(this.counter%2 === 1){
+            this.hidePassword = false;
+        }
+        else this.hidePassword = true;
+        this.counter++;
+        this.myClick.push(Date.now)
+    }
+
+    //RegisterClicks(){
+       // this.myClick.push(Math.random)
+   // }
+
 }
