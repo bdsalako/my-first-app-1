@@ -7,22 +7,23 @@
     <input type="text" class="form-control" (input)="UserEntry($event)">
     <button 
         class="btn btn-primary" 
-        [disabled]="disableButton" 
-        (click)="ResetUsername()">
+        [disabled]="disableButton">
         Reset Username
     </button>
     
 <hr>
 </div>
-<div class="container">
-    <button class=""btn btn-primary (click)="DisplayDetail()">Display Detail</button>
+    <div class="container">
+        <button class=""btn btn-primary (click)="DisplayDetail()">Display Detail</button>
+        <p [hidden]="!hidePassword">Secret Password = tune</p>
+        <hr>
+        <div class="container">
+            <p *ngFor="let click of myClickA">{{myClickA[0]}}</p>
+            <p [hidden] ="hideParagraph"*ngFor="let click of myClickB" [ngStyle]="{backgroundColor: GetColor()}" [ngClass]="{fontColor: counter > 6} ">{{myClickB}}</p>
+            
+        </div>
+    </div>
+
     
-    <p [hidden]="!hidePassword">Secret Password = tune</p>
-    <hr>
-    <p *ngFor="let click of myClick" 
-       [ngStyle]="{backgroundColor: GetColor()}" 
-       [ngClass]="{paintBlue: counter > 5}">
-       {{myClick}}
-    </p>
-    
-</div>
+
+
