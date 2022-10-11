@@ -18,16 +18,13 @@
         <p [hidden]="!hidePassword">Secret Password = tune</p>
         <hr>
         <div class="container">
-            <p *ngFor="let click of myClickA; let i = index">
-                [ngStyle]="{backgroundColor: click => 5? 'blue' : 'transparent'}"
-                [ngClass]="{fontColor: click => 6}"
+            <p *ngFor="let click of myClickA; let i = index" 
+                [ngStyle]="{backgroundColor: click >= 5 ? 'blue' : 'transparent'}" 
+                [ngClass]="{fontColor: click >= 5}">
                 {{myClickA[i]}}
             </p>
             
-         </div>   
+        </div>   
     </div>
-</div>
-
-    
 
 
