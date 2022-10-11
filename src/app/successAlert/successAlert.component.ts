@@ -3,7 +3,7 @@ import { Component } from '@angular/core'
 @Component({
     selector: 'app-success',
     templateUrl: './successAlert.component.html',
-    styleUrls: ['./successAlert.component.css']
+    styles: ['.paintBlue{ color: white}']
 })
 
 export class SuccessAlertComponent{
@@ -40,8 +40,8 @@ export class SuccessAlertComponent{
         this.myClick.push(Date.now());
     }
 
-    //RegisterClicks(){
-        //return "test";
-    //}
+    GetColor(){
+        return this.counter > 5 ? 'blue' : 'white';
+    }
 
 }
