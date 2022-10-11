@@ -11,9 +11,7 @@ export class SuccessAlertComponent{
     disableButton = true;
     hidePassword = true;
     myClickA = [];
-    myClickB = [];
     counter = 0;
-    hideParagraph = true;
 
     Constructor(){
 
@@ -36,29 +34,8 @@ export class SuccessAlertComponent{
         }
         else this.hidePassword = true;
         this.counter++;
-        if(this.counter < 5){
-            this.myClickA.push(this.counter);
-            this.myClickB = this.myClickA;  
-        }
-        else 
-        {
-            this.myClickB.push(this.counter);
-            this.hideParagraph = false;
-        }
+        this.myClickA.push(this.counter); 
+    }
         
-    }
-
-    GetColor(){
-        return this.counter > 5 ? 'blue' : 'white';
-    }
-
-    RemoveItem(){
-        this.myClickA.pop();
-    }
-
-    test(){
-        return this.myClickA.pop();
-    }
-    
-
+        
 }
