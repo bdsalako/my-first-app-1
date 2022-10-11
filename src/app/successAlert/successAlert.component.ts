@@ -3,15 +3,17 @@ import { Component } from '@angular/core'
 @Component({
     selector: 'app-success',
     templateUrl: './successAlert.component.html',
-    styles: ['.paintBlue{ color: white}']
+    styles: ['.fontColor{ color: white}']
 })
 
 export class SuccessAlertComponent{
     username: string ="";
     disableButton = true;
     hidePassword = true;
-    myClick = [];
-    counter = 1;
+    myClickA = [];
+    myClickB = [];
+    counter = 0;
+    hideParagraph = true;
 
     Constructor(){
 
@@ -27,21 +29,36 @@ export class SuccessAlertComponent{
     EnableButton(){
         return this.disableButton;
     }
-    
-    ResetUsername(){     
-    }
 
     DisplayDetail(){
-        if(this.counter%2 === 1){
+        if((this.counter+1)%2 === 1){
             this.hidePassword = false;
         }
         else this.hidePassword = true;
         this.counter++;
-        this.myClick.push(Date.now());
+        if(this.counter < 5){
+            this.myClickA.push(this.counter);
+            this.myClickB = this.myClickA;  
+        }
+        else 
+        {
+            this.myClickB.push(this.counter);
+            this.hideParagraph = false;
+        }
+        
     }
 
     GetColor(){
         return this.counter > 5 ? 'blue' : 'white';
     }
+
+    RemoveItem(){
+        this.myClickA.pop();
+    }
+
+    test(){
+        return this.myClickA.pop();
+    }
+    
 
 }
