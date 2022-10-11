@@ -13,7 +13,8 @@ import { WarningAlertComponent } from './warningAlert/warningAlert.component';
    
   ],
   imports: [
-    BrowserModule  
+    BrowserModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
