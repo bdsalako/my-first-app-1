@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-game-control',
@@ -7,9 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameControlComponent implements OnInit {
 
-  constructor() { }
+counter: number = 0;
+@Output() startCounter: EventEmitter<any> = new EventEmitter();
+@Output() stopCounter: EventEmitter<any> = new EventEmitter();
+
+
+  constructor() { 
+    setTimeout(()=>{
+      this.Incremental();
+    }, 1000);
+  }
 
   ngOnInit(): void {
+  }
+  Incremental(){
+    this.counter++;
   }
 
 }
