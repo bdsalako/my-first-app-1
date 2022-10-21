@@ -8,20 +8,27 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 export class GameControlComponent implements OnInit {
 
 counter: number = 0;
-@Output() startCounter: EventEmitter<any> = new EventEmitter();
-@Output() stopCounter: EventEmitter<any> = new EventEmitter();
+@Output() evenNumber: EventEmitter<any> = new EventEmitter();
+@Output() oddNumber: EventEmitter<any> = new EventEmitter();
 
 
   constructor() { 
-    setTimeout(()=>{
-      this.Incremental();
-    }, 1000);
+   
   }
 
   ngOnInit(): void {
   }
+
   Incremental(){
-    this.counter++;
+     setTimeout(()=>{
+      this.counter++;
+      if(this.counter%2 == 0){
+        this.evenNumber.emit(this.counter);
+      } else {
+        this.oddNumber.emit(this.counter);
+      }
+      this.Incremental
+    }, 1000);
   }
 
 }
